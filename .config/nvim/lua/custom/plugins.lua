@@ -1,8 +1,15 @@
-local plugins = {{
+local plugins = {
+  {
     "williamboman/mason.nvim",
     opts = {
         ensure_installed = {"gopls"}
     }
+}, {
+    "neovim/nvim-lspconfig",
+    config = function ()
+      require "plugins.configs.lspconfig"
+      require "custom.configs.lspconfig"
+    end,
 }, {
     "ray-x/go.nvim",
     dependencies = { -- optional packages
@@ -12,10 +19,6 @@ local plugins = {{
     end,
     event = {"CmdlineEnter"},
     ft = {"go", 'gomod'},
-    build = ':lua require("go.install").update_all_sync()' -- if you need to install/update all binaries
-}, {
-    'Exafunction/codeium.vim',
-    event = 'BufEnter'
 }, {
     "ldelossa/gh.nvim",
     dependencies = {{
@@ -30,6 +33,17 @@ local plugins = {{
 }, {
     "ruifm/gitlinker.nvim",
     dependencies = {"nvim-lua/plenary.nvim"}
-}, {"sbdchd/neoformat"}}
+}, {
+    "jose-elias-alvarez/null-ls.nvim",
+    ft = "go",
+    opts = function ()
+      return require "custom.configs.null-ls"
+    end,
+}, {
+    "liuchengxu/vista.vim"
+}, {
+    "github/copilot.vim"
+  }
+}
 
 return plugins

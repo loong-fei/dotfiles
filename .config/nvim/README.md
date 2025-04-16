@@ -1,13 +1,9 @@
-# Introduction
+**This repo is supposed to used as config by NvChad users!**
 
-This is my Nvim configuration mainly on macOS. Slowly expanding as I discover more.
+- The main nvchad repo (NvChad/NvChad) is used as a plugin by this repo.
+- So you just import its modules , like `require "nvchad.options" , require "nvchad.mappings"`
+- So you can delete the .git from this repo ( when you clone it locally ) or fork it :)
 
-# Install and Setup
+# Credits
 
-```git clone https://github.com/loong-fei/fei-nvim-config.git ~/.config/nvim --depth 1 && nvim```
-
-# Features
-
-* https://nvchad.com/
-* https://github.com/f-person/git-blame.nvim
-
+1) Lazyvim starter https://github.com/LazyVim/starter as nvchad's starter was inspired by Lazyvim's . It made a lot of things easier!
